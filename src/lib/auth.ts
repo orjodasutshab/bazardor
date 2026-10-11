@@ -9,6 +9,7 @@ const trustedOrigins = [
   baseURL,
   'http://localhost:3000',
   process.env.BETTER_AUTH_URL_1,
+  process.env.BETTER_AUTH_URL_2,
 ].filter((origin): origin is string => Boolean(origin));
 
 export const auth = betterAuth({
@@ -20,6 +21,7 @@ export const auth = betterAuth({
 
   emailAndPassword: {
     enabled: true,
+    autoSignIn: false,
     minPasswordLength: 6,
   },
 
