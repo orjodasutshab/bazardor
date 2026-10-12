@@ -91,3 +91,15 @@ export function getBnFormattedDate(date: Date): string {
 
   return `${dayName}, ${dayNum} ${monthName}, ${yearNum}`;
 }
+
+// "১,৮৫০" বা "148" বা 148 — সবকিছুকে আসল সংখ্যায় রূপান্তর করে (সর্টিং-এর জন্য)
+export function parseBnNumber(value: number | string | undefined | null): number {
+  if (typeof value === 'number') return value;
+  if (value == null) return 0;
+  const en = String(value)
+    .replace(/[০-৯]/g, (d) => String('০১২৩৪৫৬৭৮৯'.indexOf(d)))
+    .replace(/,/g, '')
+    .replace(/[^\d.\-]/g, '');
+  const n = parseFloat(en);
+  return Number.isNaN(n) ? 0 : n;
+}

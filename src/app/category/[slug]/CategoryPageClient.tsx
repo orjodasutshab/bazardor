@@ -7,7 +7,7 @@ import { ProductGridSkeleton } from '@/components/ProductSkeleton';
 import { useRouter } from '@/context/RouterContext';
 import { fetchCategoryBySlug, fetchProductsByCategory } from '@/services/api';
 import { Category, Product, SortOption } from '@/types';
-import { toBnNum } from '@/utils/bengali';
+import { toBnNum, parseBnNumber } from '@/utils/bengali';
 
 interface CategoryPageClientProps {
   slug?: string;
@@ -84,8 +84,8 @@ export default function CategoryPageClient({ slug: rawSlug }: CategoryPageClient
   }, [slugReady, loadData]);
 
   const sortedProducts = [...products].sort((a, b) => {
-    if (sortOption === 'price-asc') return a.today - b.today;
-    if (sortOption === 'price-desc') return b.today - a.today;
+    if (sortOption === 'price-asc') return parseBnNumber(a.today) - parseBnNumber(b.today);
+    if (sortOption === 'price-desc') return parseBnNumber(b.today) - parseBnNumber(a.today);
     return 0;
   });
 
