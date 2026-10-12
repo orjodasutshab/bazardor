@@ -2,9 +2,9 @@
 
 # 🛒 বাজার দর · BazarDor
 
-### আজকের বাজারের দাম, এক নজরে।
+### Today's market prices, at a glance.
 
-চাল, ডাল, তেল, সবজি, মাছ, মাংস, ডিম-দুধ ও মসলা। দামের ওঠানামা আর বাজারভিত্তিক তুলনা, সব একই জায়গায়।
+Rice, lentils, oil, vegetables, fish, meat, dairy and spices. Price changes and market-by-market comparisons, all in one place.
 
 <br />
 
@@ -17,187 +17,191 @@
 
 <br />
 
-### 🌐 [**Live Demo দেখুন →**](https://bazardor-tau-inky.vercel.app)
+### 🌐 [**View the Live Demo →**](https://bazardor-tau-inky.vercel.app)
+
+🇧🇩 [বাংলায় পড়ুন →](README.bn.md)
 
 </div>
 
 ---
 
-## 📑 সূচিপত্র
+## 📑 Table of Contents
 
-- [পরিচিতি](#-পরিচিতি)
-- [প্রধান ফিচার](#-প্রধান-ফিচার)
-- [ব্যবহৃত প্রযুক্তি](#-ব্যবহৃত-প্রযুক্তি)
-- [পেজ ও রুট](#-পেজ-ও-রুট)
-- [API এন্ডপয়েন্ট](#-api-এন্ডপয়েন্ট)
-- [লোকালে চালানোর নিয়ম](#-লোকালে-চালানোর-নিয়ম)
-- [এনভায়রনমেন্ট ভেরিয়েবল](#-এনভায়রনমেন্ট-ভেরিয়েবল)
-- [ফোল্ডার কাঠামো](#-ফোল্ডার-কাঠামো)
-- [ডিপ্লয়মেন্ট](#-ডিপ্লয়মেন্ট)
-- [লেখক](#-লেখক)
-
----
-
-## 🌟 পরিচিতি
-
-**বাজার দর** একটি রেসপনসিভ ওয়েব অ্যাপ্লিকেশন, যেখানে নিত্যপ্রয়োজনীয় পণ্যের আজকের দাম বাংলায় দেখা যায়। প্রতিটি পণ্যের দাম বাড়ল না কমল, তা রঙিন ব্যাজে একনজরে বোঝা যায়। লগইন করা ব্যবহারকারীরা পণ্যের বিস্তারিত পেজে সর্বনিম্ন, সর্বোচ্চ ও গড় দাম এবং বিভিন্ন বাজারের দাম তুলনা করতে পারেন।
-
-অ্যাপটি মোবাইল, ট্যাবলেট ও ডেস্কটপ, সব স্ক্রিনে ঠিকমতো কাজ করে।
+- [About](#-about)
+- [Key Features](#-key-features)
+- [Tech Stack](#-tech-stack)
+- [Pages and Routes](#-pages-and-routes)
+- [API Endpoints](#-api-endpoints)
+- [Getting Started](#-getting-started)
+- [Environment Variables](#-environment-variables)
+- [Project Structure](#-project-structure)
+- [Deployment](#-deployment)
+- [Author](#-author)
 
 ---
 
-## ✨ প্রধান ফিচার
+## 🌟 About
 
-| | ফিচার | বিবরণ |
+**BazarDor** is a responsive web application that shows today's prices of everyday essentials in Bengali. Colored badges make it easy to see at a glance whether a price has gone up or down. Signed-in users can open a product's detail page to see the minimum, maximum and average price, and compare prices across different markets.
+
+The app works on mobile, tablet and desktop screens.
+
+---
+
+## ✨ Key Features
+
+| | Feature | Description |
 |---|---|---|
-| 📅 | **বাংলা তারিখসহ নেভবার** | লোগোর নিচে আজকের বাংলা তারিখ, ক্যাটাগরি লিংক এবং বর্তমান ক্যাটাগরির হাইলাইট |
-| 📢 | **লাইভ প্রাইস টিকার** | নেভবারের নিচে অনবরত স্ক্রল করা পণ্যের নাম, দাম ও ▲/▼ পরিবর্তনের হার |
-| 🎯 | **হিরো সেকশন** | আকর্ষণীয় শিরোনাম, বাটন ক্লিকে `#সব-পণ্য` অংশে স্মুথ স্ক্রল, ডানে ব্যানার ছবি |
-| 📈 | **আজ দাম বেড়েছে / কমেছে** | সবচেয়ে বেশি বাড়া ও কমা ৬টি করে পণ্য আলাদা সেকশনে |
-| 🧺 | **সব পণ্য** | রেসপনসিভ গ্রিডে পণ্যের কার্ড, বাংলা সংখ্যায় দাম এবং সবুজ/লাল/ধূসর পরিবর্তন ব্যাজ |
-| 🗂️ | **ক্যাটাগরি পেজ** | ক্যাটাগরি অনুযায়ী পণ্য, লোডিং স্কেলিটন এবং ভুল ক্যাটাগরিতে খালি অবস্থার বার্তা |
-| ↕️ | **সর্টিং** | "ডিফল্ট / দাম: কম থেকে বেশি / দাম: বেশি থেকে কম"। বাংলা সংখ্যা সংখ্যামান ধরে সাজানো হয় |
-| 🔒 | **সুরক্ষিত বিস্তারিত পেজ** | লগইন ছাড়া ঢোকা যায় না, লগইনের পর আগের পেজেই ফিরে আসে |
-| 🔐 | **অথেন্টিকেশন** | ইমেইল ও পাসওয়ার্ডে সাইন ইন/সাইন আপ। Google ও GitHub লগইন কনফিগার করা যায় |
-| 🔔 | **টোস্ট নোটিফিকেশন** | লগইন, সাইন আপ, লগআউট ও ভুল তথ্যে সাথে সাথে বার্তা |
-| 👤 | **প্রোফাইল ও নাম হালনাগাদ** | My Profile পেজ এবং আলাদা পেজে নাম আপডেটের সুবিধা |
-| 🚫 | **কাস্টম 404 পেজ** | ভুল রুটে বন্ধুত্বপূর্ণ বার্তা ও "হোম পেজে ফিরে যান" বাটন |
+| 📅 | **Navbar with Bengali date** | Today's Bengali date under the logo, category links, and a highlighted active category |
+| 📢 | **Live price ticker** | A continuously scrolling strip under the navbar showing product name, price and ▲/▼ change |
+| 🎯 | **Hero section** | Headline, call-to-action button that smooth-scrolls to `#সব-পণ্য`, and a banner image |
+| 📈 | **Prices up / down** | Top 6 risers and top 6 fallers in separate sections |
+| 🧺 | **All products** | Responsive product-card grid with prices in Bengali digits and green / red / gray change badges |
+| 🗂️ | **Category pages** | Products by category, loading skeletons, and an empty state for unknown categories |
+| ↕️ | **Sorting** | "Default / Price: low to high / Price: high to low". Bengali numerals are sorted by numeric value |
+| 🔒 | **Protected detail page** | Requires sign-in, and returns the user to the page they were trying to open |
+| 🔐 | **Authentication** | Email and password sign-in and sign-up. Google and GitHub login can be enabled through configuration |
+| 🔔 | **Toast notifications** | Instant feedback on sign-in, sign-up, sign-out and validation errors |
+| 👤 | **Profile and name update** | A My Profile page and a separate page to update your name |
+| 🚫 | **Custom 404 page** | Friendly message and a "Back to home" button for unknown routes |
 
 ---
 
-## 🧰 ব্যবহৃত প্রযুক্তি
+## 🧰 Tech Stack
 
-| ক্ষেত্র | প্রযুক্তি |
+| Area | Technology |
 |---|---|
-| **ফ্রেমওয়ার্ক** | Next.js (App Router), React |
-| **ভাষা** | TypeScript |
-| **স্টাইলিং** | Tailwind CSS, HeroUI |
-| **অথেন্টিকেশন** | Better Auth (ইমেইল/পাসওয়ার্ড, Google, GitHub) |
-| **ডেটাবেস** | MongoDB Atlas |
-| **নোটিফিকেশন** | react-hot-toast |
-| **আইকন** | lucide-react |
-| **টিকার অ্যানিমেশন** | react-marquee-text |
-| **ফন্ট** | Hind Siliguri (বাংলা ও ল্যাটিন) |
-| **ডিপ্লয়মেন্ট** | Vercel |
+| **Framework** | Next.js (App Router), React |
+| **Language** | TypeScript |
+| **Styling** | Tailwind CSS, HeroUI |
+| **Authentication** | Better Auth (email/password, Google, GitHub) |
+| **Database** | MongoDB Atlas |
+| **Notifications** | react-hot-toast |
+| **Icons** | lucide-react |
+| **Ticker animation** | react-marquee-text |
+| **Font** | Hind Siliguri (Bengali and Latin) |
+| **Deployment** | Vercel |
 
 ---
 
-## 🧭 পেজ ও রুট
+## 🧭 Pages and Routes
 
-| রুট | বিবরণ | লগইন লাগবে? |
+| Route | Description | Sign-in required? |
 |---|---|---|
-| `/` | হোম পেজ: হিরো, টিকার, বাড়া/কমা, সব পণ্য | না |
-| `/category/[slug]` | ক্যাটাগরি অনুযায়ী পণ্য ও সর্টিং | না |
-| `/product/[slug]` | পণ্যের বিস্তারিত ও বাজারভিত্তিক দাম | **হ্যাঁ** |
-| `/signin` | সাইন ইন | না |
-| `/signup` | সাইন আপ | না |
-| `/profile` | আমার প্রোফাইল | **হ্যাঁ** |
-| `/profile/update` | নাম আপডেট | **হ্যাঁ** |
-| অন্য যেকোনো রুট | কাস্টম 404 পেজ | না |
+| `/` | Home: hero, ticker, price rises/falls, all products | No |
+| `/category/[slug]` | Products by category, with sorting | No |
+| `/product/[slug]` | Product details and market-wise prices | **Yes** |
+| `/signin` | Sign in | No |
+| `/signup` | Sign up | No |
+| `/profile` | My profile | **Yes** |
+| `/profile/update` | Update name | **Yes** |
+| `/privacy` | Privacy policy | No |
+| Any other route | Custom 404 page | No |
 
 ---
 
-## 🔌 API এন্ডপয়েন্ট
+## 🔌 API Endpoints
 
-পণ্য ও ক্যাটাগরির তথ্য আসে একটি বাইরের API থেকে। ঠিকানা `NEXT_PUBLIC_API_URL` ভেরিয়েবলে সেট করা হয়, আর মূল API অকার্যকর হলে বিকল্প API থেকে তথ্য আনা হয়।
+Product and category data comes from an external API. Its address is set with the `NEXT_PUBLIC_API_URL` variable, and if the main API fails, the app falls back to alternative APIs.
 
-| মেথড | এন্ডপয়েন্ট | বিবরণ |
+| Method | Endpoint | Description |
 |---|---|---|
-| `GET` | `/products` | সব পণ্য |
-| `GET` | `/products?category=chal` | ক্যাটাগরি অনুযায়ী ফিল্টার |
-| `GET` | `/products/:id` | একটি নির্দিষ্ট পণ্য |
-| `GET` | `/categories` | সব ক্যাটাগরি |
-| `GET` | `/categories/:id` | একটি নির্দিষ্ট ক্যাটাগরি |
+| `GET` | `/products` | All products |
+| `GET` | `/products?category=chal` | Filter by category |
+| `GET` | `/products/:id` | A single product |
+| `GET` | `/categories` | All categories |
+| `GET` | `/categories/:id` | A single category |
 
 ---
 
-## 🚀 লোকালে চালানোর নিয়ম
+## 🚀 Getting Started
 
-**প্রয়োজনীয় জিনিস:** Node.js (সর্বশেষ LTS), Git ও একটি MongoDB Atlas অ্যাকাউন্ট।
+**Prerequisites:** Node.js (latest LTS), Git and a MongoDB Atlas account.
 
 ```bash
-# ১. রিপোজিটরি ক্লোন করুন
+# 1. Clone the repository
 git clone https://github.com/orjodasutshab/bazardor.git
 cd bazardor
 
-# ২. প্যাকেজ ইনস্টল করুন
+# 2. Install dependencies
 npm install
 
-# ৩. .env.local ফাইল বানান (নিচের টেবিল দেখুন)
+# 3. Create a .env.local file (see the table below)
 
-# ৪. ডেভেলপমেন্ট সার্ভার চালু করুন
+# 4. Start the development server
 npm run dev
 ```
 
-তারপর ব্রাউজারে [http://localhost:3000](http://localhost:3000) খুলুন।
+Then open [http://localhost:3000](http://localhost:3000) in your browser.
 
 ---
 
-## 🔑 এনভায়রনমেন্ট ভেরিয়েবল
+## 🔑 Environment Variables
 
-প্রজেক্ট ফোল্ডারে `.env.local` ফাইল বানিয়ে নিচের মানগুলো দিন। এই ফাইল গিটে যায় না, তাই গোপন তথ্য নিরাপদ থাকে।
+Create a `.env.local` file in the project root with the values below. This file is not tracked by Git, so your secrets stay safe.
 
-| ভেরিয়েবল | বাধ্যতামূলক | বিবরণ |
+| Variable | Required | Description |
 |---|---|---|
-| `BETTER_AUTH_SECRET` | ✅ | লগইন সেশন সুরক্ষার গোপন কী। নিজে বানাতে হবে |
-| `BETTER_AUTH_URL` | ✅ | সাইটের ঠিকানা (লোকালে `http://localhost:3000`) |
-| `MONGODB_URI` | ✅ | MongoDB Atlas-এর connection string |
-| `NEXT_PUBLIC_API_URL` | ➖ | পণ্যের API-র ঠিকানা। না দিলে ডিফল্ট ঠিকানা ব্যবহার হয় |
-| `GOOGLE_CLIENT_ID`, `GOOGLE_CLIENT_SECRET` | ➖ | Google লগইন চালু করতে |
-| `GITHUB_CLIENT_ID`, `GITHUB_CLIENT_SECRET` | ➖ | GitHub লগইন চালু করতে |
+| `BETTER_AUTH_SECRET` | ✅ | Secret key that protects login sessions. Generate your own |
+| `BETTER_AUTH_URL` | ✅ | The site's address (`http://localhost:3000` locally) |
+| `MONGODB_URI` | ✅ | MongoDB Atlas connection string |
+| `NEXT_PUBLIC_API_URL` | ➖ | Address of the products API. A default is used if not set |
+| `GOOGLE_CLIENT_ID`, `GOOGLE_CLIENT_SECRET` | ➖ | Enables Google login |
+| `GITHUB_CLIENT_ID`, `GITHUB_CLIENT_SECRET` | ➖ | Enables GitHub login |
 
-**নিজের সিক্রেট কী বানানোর কমান্ড:**
+**Command to generate your own secret key:**
 
 ```bash
 node -e "console.log(require('crypto').randomBytes(32).toString('hex'))"
 ```
 
-> ⚠️ সিক্রেট কী, পাসওয়ার্ড বা connection string কখনো কোডে লিখবেন না এবং GitHub-এ আপলোড করবেন না।
+> ⚠️ Never write secret keys, passwords or connection strings in the code, and never upload them to GitHub.
 
 ---
 
-## 📁 ফোল্ডার কাঠামো
+## 📁 Project Structure
 
 ```
 bazardor/
 ├── src/
 │   ├── app/
-│   │   ├── api/auth/[...all]/   # Better Auth এর API route
-│   │   ├── category/[slug]/     # ক্যাটাগরি পেজ ও সর্টিং
-│   │   ├── product/[slug]/      # পণ্যের বিস্তারিত পেজ
-│   │   ├── profile/             # প্রোফাইল ও নাম আপডেট
-│   │   ├── signin/              # সাইন ইন
-│   │   ├── signup/              # সাইন আপ
-│   │   ├── not-found.tsx        # কাস্টম 404 পেজ
-│   │   ├── layout.tsx           # মূল লেআউট ও ফন্ট
-│   │   └── page.tsx             # হোম পেজ
-│   ├── components/              # Navbar, Hero, ProductCard, Footer, টিকার ও স্কেলিটন
-│   ├── context/                 # AuthContext ও RouterContext
-│   ├── lib/                     # Better Auth সার্ভার ও ক্লায়েন্ট কনফিগারেশন
-│   ├── services/                # API থেকে ডেটা আনার ফাংশন
-│   ├── types/                   # TypeScript টাইপ
-│   └── utils/                   # বাংলা সংখ্যা ও তারিখের সহায়ক ফাংশন
+│   │   ├── api/auth/[...all]/   # Better Auth API route
+│   │   ├── category/[slug]/     # Category page and sorting
+│   │   ├── product/[slug]/      # Product detail page
+│   │   ├── profile/             # Profile and name update
+│   │   ├── privacy/             # Privacy policy
+│   │   ├── signin/              # Sign in
+│   │   ├── signup/              # Sign up
+│   │   ├── not-found.tsx        # Custom 404 page
+│   │   ├── layout.tsx           # Root layout and font
+│   │   └── page.tsx             # Home page
+│   ├── components/              # Navbar, Hero, ProductCard, Footer, ticker and skeleton
+│   ├── context/                 # AuthContext and RouterContext
+│   ├── lib/                     # Better Auth server and client configuration
+│   ├── services/                # Functions that fetch data from the API
+│   ├── types/                   # TypeScript types
+│   └── utils/                   # Helpers for Bengali digits and dates
 ├── package.json
 └── README.md
 ```
 
 ---
 
-## 🌍 ডিপ্লয়মেন্ট
+## 🌍 Deployment
 
-প্রজেক্টটি **Vercel**-এ ডিপ্লয় করা আছে। GitHub-এর `main` ব্রাঞ্চে `git push` করলে Vercel নিজে নতুন সংস্করণ বানিয়ে চালু করে।
+The project is deployed on **Vercel**. Pushing to the `main` branch on GitHub triggers a new build and release automatically.
 
-Vercel-এ **Settings → Environment Variables**-এ উপরের টেবিলের বাধ্যতামূলক ভেরিয়েবলগুলো বসাতে হয়, তারপর একবার **Redeploy** দিতে হয়।
+On Vercel, add the required variables from the table above under **Settings → Environment Variables**, then **Redeploy** once.
 
 <!--
-## 📸 স্ক্রিনশট
-স্ক্রিনশট docs/ ফোল্ডারে রেখে এখানে যোগ করুন:
-![হোম পেজ](docs/home.png)
+## 📸 Screenshots
+Put screenshots in a docs/ folder and add them here:
+![Home page](docs/home.png)
 -->
 
 ---
 
-## 👨‍💻 লেখক
+## 👨‍💻 Author
 
 **Orjo Das Utshab**
 GitHub: [@orjodasutshab](https://github.com/orjodasutshab)
@@ -206,8 +210,8 @@ GitHub: [@orjodasutshab](https://github.com/orjodasutshab)
 
 <div align="center">
 
-> সকল দাম সম্ভাব্য; বাজার অবস্থার ওপর নির্ভর করে পরিবর্তিত হয়।
+> All prices are approximate and may change depending on market conditions.
 
-**⭐ প্রজেক্টটি ভালো লাগলে একটি Star দিতে ভুলবেন না!**
+**⭐ If you like this project, don't forget to give it a Star!**
 
 </div>
