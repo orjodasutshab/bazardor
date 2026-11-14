@@ -48,7 +48,7 @@ The app works on mobile, tablet and desktop screens.
 
 ---
 
-## ✨ Key Features
+## ✨ Key Features.
 
 | | Feature | Description |
 |---|---|---|
