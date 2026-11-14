@@ -204,7 +204,7 @@ Put screenshots in a docs/ folder and add them here:
 
 ## 👨‍💻 Author
 
-**Orjo Das Utshab**
+**Orjo Das Utshab👨‍💼🧑‍💻**
 GitHub: [@orjodasutshab](https://github.com/orjodasutshab)
 
 ---
@@ -213,6 +213,6 @@ GitHub: [@orjodasutshab](https://github.com/orjodasutshab)
 
 > All prices are approximate and may change depending on market conditions.
 
-**⭐ If you like this project, don't forget to give it a Star!**
+**⭐ If you like this project, don't forget to give it a Star!💙**
 
 </div>
