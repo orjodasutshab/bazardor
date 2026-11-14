@@ -1,6 +1,6 @@
 <div align="center">
 
-# 🛒 বাজার দর · BazarDor
+# 🛒 বাজার দর · BazarDor.
 
 ### Today's market prices, at a glance.
 
