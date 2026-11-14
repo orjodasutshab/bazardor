@@ -62,7 +62,8 @@ The app works on mobile, tablet and desktop screens.
 | 🔒 | **Protected detail page** | Requires sign-in, and returns the user to the page they were trying to open |
 | 🔐 | **Authentication** | Email and password sign-in and sign-up. Google and GitHub login can be enabled through configuration |
 | 🔔 | **Toast notifications** | Instant feedback on sign-in, sign-up, sign-out and validation errors |
-| 👤 | **Profile and name update** | A My Profile page and a separate page to update your name |
+
+| 👤 | **Profile Management** | View your personal information on a dedicated **My Profile** page and easily update your display name from a separate **Edit Profile** screen. |
 | 🚫 | **Custom 404 page** | Friendly message and a "Back to home" button for unknown routes |
 
 ---
