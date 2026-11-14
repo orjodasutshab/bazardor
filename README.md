@@ -1,8 +1,8 @@
 <div align="center">
 
-# 🛒 বাজার দর. · BazarDor.
+# 🛒 বাজার দর. · BazarDor
 
-### Today's market prices, at a glance.
+### Today's market prices, at a glance
 
 Rice, lentils, oil, vegetables, fish, meat, dairy and spices. Price changes and market-by-market comparisons, all in one place.
 
